@@ -24,7 +24,7 @@ fastqc "$R1" "$R2"
 ############################################
 
 echo "Running Trimmomatic"
-java -jar /home/vandenabeele/software/Trimmomatic-0.39/trimmomatic-0.39.jar PE -threads $THREADS $R1 $R2 trim_$R1 unpaired_$R1 trim_$R2 unpaired_$R2 ILLUMINACLIP:$ADAPTERS:2:30:10 LEADING:20 TRAILING:20 SLIDINGWINDOW:4:20 MINLEN:75 AVGQUAL:25
+java -jar trimmomatic-0.39.jar PE -threads $THREADS $R1 $R2 trim_$R1 unpaired_$R1 trim_$R2 unpaired_$R2 ILLUMINACLIP:$ADAPTERS:2:30:10 LEADING:20 TRAILING:20 SLIDINGWINDOW:4:20 MINLEN:75 AVGQUAL:25
 
 
 ############################################
@@ -92,7 +92,7 @@ done
 FILES="$FILES ${OUTPUT_SPADES}.fasta ${OUTPUT_TRINITY}.Trinity.fasta"
 PREFIXES="$PREFIXES spades_ trinity_"
 
-/home/vandenabeele/software/transabyss-master/transabyss-merge $FILES --mink $(echo $KMER | awk '{print $1}') --maxk $(echo $KMER | awk '{print $NF}') --threads $THREADS --prefixes $PREFIXES --out merge_${SAMPLE}.fasta
+$TRANSABYSS_DIR/transabyss-merge $FILES --mink $(echo $KMER | awk '{print $1}') --maxk $(echo $KMER | awk '{print $NF}') --threads $THREADS --prefixes $PREFIXES --out merge_${SAMPLE}.fasta
 
 
 ############################################
@@ -139,5 +139,5 @@ awk '/^>/ {header=$0; getline seq; if (header ~ /main/ || header ~ /noclass/) pr
 # STEP 6: ASSEMBLY COMPLETNESS ASSESSMENT
 ############################################
 
-/home/vandenabeele/software/busco/bin/busco -i ${SAMPLE}.fasta -m tran -l $BUSCO_LINEAGE -c 10 -o busco_${SAMPLE}
+busco -i ${SAMPLE}.fasta -m tran -l $BUSCO_LINEAGE -c 10 -o busco_${SAMPLE}
 
