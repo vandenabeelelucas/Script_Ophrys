@@ -30,7 +30,7 @@ The pipeline requires the following software to be installed:
 
 ### Usage
 ```
-Assembly_pipeline.sh sample_R1.fastq.gz sample_R2.fastq.gz
+phylotranscript_ophrys.sh sample_R1.fastq.gz sample_R2.fastq.gz
 ```
 ## data_to_twisst.R
 Use genomic position and phylogenetic tree to generate the input files required to produce TWISST (https://github.com/simonhmartin/twisst) plots. Uses a modified version of plot_twisst.R called `plot_twisst_modify.R`.
