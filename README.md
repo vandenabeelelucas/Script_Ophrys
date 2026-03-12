@@ -169,7 +169,7 @@ Reformats '.ali' files in '.fasta'
 
 ### Usage
 ```bash
-ali2fasta
+ali2fasta ali=file.ali
 ```
 ## fasta2ali.c
 Reformats '.fasta' files in '.ali'
@@ -181,5 +181,5 @@ Reformats '.fasta' files in '.ali'
 
 ### Usage
 ```bash
-fasta2ali
+fasta2ali fasta=file.fasta
 ```
