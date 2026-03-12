@@ -1,5 +1,5 @@
 # Phylotranscriptomics allows distinguishing major gene flow events from incomplete lineage sorting in rapidly diversifying mimetic orchids (genus Ophrys)
-Script from the study "Phylotranscriptomics allows distinguishing major gene flow events from incomplete lineage sorting in rapidly diversifying mimetic orchids (genus Ophrys)" ()
+Script from the study "Phylotranscriptomics allows distinguishing major gene flow events from incomplete lineage sorting in rapidly diversifying mimetic orchids (genus Ophrys)" (https://doi.org/10.64898/2026.01.07.698074)
 
 ## assembly_pipeline.sh
 _De Novo_ transcriptome assembly pipeline from raw paired-end RNA-seq reads. Performs read quality assessment and filtering, transcriptome assembly using multiple tools, redundacy removal and assembly completness evaluation
@@ -157,7 +157,7 @@ Check orthology in alignment file (.ali).
 ```bash
 detect-problems-arb ali=file.ali arb=corresponding_tree.arb clades==Example_file_clade.txt paralogy_clade=false
 ```
-### ali2fasta.c
+## ali2fasta.c
 Reformats '.ali' files in '.fasta'
 
 | Parameter | Description |
@@ -171,7 +171,7 @@ Reformats '.ali' files in '.fasta'
 ```bash
 ali2fasta
 ```
-### fasta2ali.c
+## fasta2ali.c
 Reformats '.fasta' files in '.ali'
 
 | Parameter | Description |
