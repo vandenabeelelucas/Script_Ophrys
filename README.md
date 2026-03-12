@@ -61,7 +61,7 @@ Rscript data_to_twisst.R \
   --alignment_size file.tsv
 ```
 
-## select-aliMCL-taxonomy
+## select-aliMCL-taxonomy.c
 
 Filters sequence files based on number of species, number of paralogs per species, and number of clades present.
 
