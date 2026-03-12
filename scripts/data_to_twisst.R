@@ -1,6 +1,6 @@
 # Rscript: data_to_twisst.R
 # Usage:
-# ./data_to_twisst.R \
+# Rscript data_to_twisst.R \
 #   --input_pos file.tsv \
 #   --tree_folder /path/to/trees \
 #   --tree_pattern treefile \
