@@ -63,20 +63,48 @@ Rscript data_to_twisst.R \
 
 ## select-aliMCL-taxonomy.c
 
-Filters sequence files based on number of species, number of paralogs per species, and number of clades present.
+Filters sequence files (.ali) based on number of species, number of paralogs per species, and number of clades present.
 
 ### Parameters
 
 | Parameter | Description |
 |-----------|-------------|
-| `-min_spec` | Minimum number of species |
-| `-min_clade` | Minimum number of clades (optional) |
-| `-max_para` | Maximum number of paralogs (optional) |
-| `-file_clade` | File containing the definition of clades (optional) |
-| `-file_needed_clade` | file containing the list of clades that must be present (optional) |
-| `-ali` | name of file .ali (optional) |
+| `min_spec` | Minimum number of species |
+| `min_clade` | Minimum number of clades (optional) |
+| `max_para` | Maximum number of paralogs (optional) |
+| `file_clade` | File containing the definition of clades (optional) |
+| `file_needed_clade` | file containing the list of clades that must be present (optional) |
+| `ali` | name of file .ali (optional) |
 
 ### Usage
 ```bash
 select-aliMCL-taxonomy min_spec=10 min_clade=5 file_clade=Example_file_clade.txt
+```
+## fasta2complementary.c
+Reverse-complements sequences on the complementary strand of a FASTA file, using the longest sequence as reference to determine alignment orientation.
+
+### Requirements
+
+The script requires the following software to be installed:
+
+-BLASTn
+
+### Usage
+```bash
+fasta2complementary
+```
+
+## ali2stat.c
+
+Provides various statistics on an alignment file in .ali format.
+
+| Parameter | Description |
+|-----------|-------------|
+| `type` | protein or DNA |
+| `infospecies` | yes or no (default=no) |
+| `-ali` | name of file .ali (optional) |
+
+### Usage
+```bash
+ali2stat type=DNA
 ```
