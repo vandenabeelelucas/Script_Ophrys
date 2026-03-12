@@ -137,3 +137,18 @@ Detects and separates from an alignment file (.ali) two distinct groups of paral
 ```bash
 root-max-div-taxon ali=file.ali arb=corresponding_tree.arb criterion0=20,15,10,0 criterion1=20,15,10,0
 ```
+## detect-problems-arb.c
+
+Check orthology in alignment file (.ali). 
+
+| Parameter | Description |
+|-----------|-------------|
+| `arb` | name of file .arb |
+| `ali` | name of file .ali |
+| `clades` |  file containing the species list for each clade |
+| `maxdist_sistergroup` | maximum distance to consider sister-group relationship as suspicious (default=0) |
+| `mindist_suspicious` | minimum distance to consider an internal branch length as sufficient to support suspicious taxonomy (default=0) |
+| `min_nb_spec_split` | minimum number of species in the smallest subclades to allow splitting (default=1) |
+| `min_overlap` | number of amino acids overlapping between two subclades to validate a putative paralogy (default=50) |
+| `min_long_BL` | minimum relative branch length to consider a branch as too long (default=50) |
+| `paralogy_clade` | false or true (to create separate alignments for clades without out- and in-paralogy and for clades with out- or in-paralogy) |
