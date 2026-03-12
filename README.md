@@ -33,7 +33,8 @@ The pipeline requires the following software to be installed:
 phylotranscript_ophrys.sh sample_R1.fastq.gz sample_R2.fastq.gz
 ```
 ## data_to_twisst.R
-Use genomic position and phylogenetic tree to generate the input files required to produce TWISST (https://github.com/simonhmartin/twisst) plots. Uses a modified version of plot_twisst.R called `plot_twisst_modify.R`.
+Use genomic position and phylogenetic tree from genes alignments to generate the input files required to produce TWISST (https://github.com/simonhmartin/twisst) plots. 
+Generates plots of topology distributions along chromosomes or ‘pseudochromosomes’ using `plot_twisst_modify.R` a modify version of plot_twisst.R (https://github.com/simonhmartin/twisst), stacked barplots of topology proportions per chromosome, and genome coverage histograms.
 
 ### Parameters
 
