@@ -1,0 +1,3 @@
+clade1:species1,species2
+clade2:species3
+clade3:speces4,species5,species6
