@@ -1,8 +1,8 @@
 # Phylotranscriptomics allows distinguishing major gene flow events from incomplete lineage sorting in rapidly diversifying mimetic orchids (genus Ophrys)
-Script from the paper "Phylotranscriptomics allows distinguishing major gene flow events from incomplete lineage sorting in rapidly diversifying mimetic orchids (genus Ophrys)"
+Script from the study "Phylotranscriptomics allows distinguishing major gene flow events from incomplete lineage sorting in rapidly diversifying mimetic orchids (genus Ophrys)" ()
 
 ## assembly_pipeline.sh
-De Novo transcriptome assembly pipeline from raw paired-end RNA-seq reads. Performs read quality assessment and filtering, transcriptome assembly using multiple tools, redundacy removal and assembly completness evaluation
+_De Novo_ transcriptome assembly pipeline from raw paired-end RNA-seq reads. Performs read quality assessment and filtering, transcriptome assembly using multiple tools, redundacy removal and assembly completness evaluation
 
 ### Requirements
 
@@ -152,3 +152,17 @@ Check orthology in alignment file (.ali).
 | `min_overlap` | number of amino acids overlapping between two subclades to validate a putative paralogy (default=50) |
 | `min_long_BL` | minimum relative branch length to consider a branch as too long (default=50) |
 | `paralogy_clade` | false or true (to create separate alignments for clades without out- and in-paralogy and for clades with out- or in-paralogy) |
+
+### Usage
+```bash
+detect-problems-arb ali=file.ali arb=corresponding_tree.arb clades==Example_file_clade.txt paralogy_clade=false
+```
+### ali2fasta.c
+Reformats '.ali' files in .fasta
+
+| Parameter | Description |
+|-----------|-------------|
+| `ali` | name of file .ali (optional) |
+| `keep_alignment` |yes or no (default = yes) |
+| `ident` | space or no (default = space) |
+| `min_length` |  minimum number of characters to keep a sequence (default=0) (optional)|
