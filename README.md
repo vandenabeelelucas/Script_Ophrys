@@ -158,7 +158,7 @@ Check orthology in alignment file (.ali).
 detect-problems-arb ali=file.ali arb=corresponding_tree.arb clades==Example_file_clade.txt paralogy_clade=false
 ```
 ### ali2fasta.c
-Reformats '.ali' files in .fasta
+Reformats '.ali' files in '.fasta'
 
 | Parameter | Description |
 |-----------|-------------|
@@ -166,3 +166,20 @@ Reformats '.ali' files in .fasta
 | `keep_alignment` |yes or no (default = yes) |
 | `ident` | space or no (default = space) |
 | `min_length` |  minimum number of characters to keep a sequence (default=0) (optional)|
+
+### Usage
+```bash
+ali2fasta
+```
+### fasta2ali.c
+Reformats '.fasta' files in '.ali'
+
+| Parameter | Description |
+|-----------|-------------|
+| `fasta` | name of file .fasta (optional) |
+| `type` | protein or DNA (optional) |
+
+### Usage
+```bash
+fasta2ali
+```
