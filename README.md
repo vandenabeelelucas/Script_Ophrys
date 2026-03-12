@@ -1,5 +1,5 @@
 # Phylotranscriptomics allows distinguishing major gene flow events from incomplete lineage sorting in rapidly diversifying mimetic orchids (genus Ophrys)
-Script from the study "Phylotranscriptomics allows distinguishing major gene flow events from incomplete lineage sorting in rapidly diversifying mimetic orchids (genus Ophrys)" (https://doi.org/10.64898/2026.01.07.698074)
+Scripts from the study "Phylotranscriptomics allows distinguishing major gene flow events from incomplete lineage sorting in rapidly diversifying mimetic orchids (genus Ophrys)" (https://doi.org/10.64898/2026.01.07.698074)
 
 ## phylotranscript_ophrys.sh
 _De Novo_ transcriptome assembly pipeline from raw paired-end RNA-seq reads. Performs read quality assessment and filtering, transcriptome assembly using multiple tools, redundacy removal and assembly completness evaluation
