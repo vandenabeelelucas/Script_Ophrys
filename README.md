@@ -102,9 +102,38 @@ Provides various statistics on an alignment file in .ali format.
 |-----------|-------------|
 | `type` | protein or DNA |
 | `infospecies` | yes or no (default=no) |
-| `-ali` | name of file .ali (optional) |
+| `ali` | name of file .ali (optional) |
 
 ### Usage
 ```bash
 ali2stat type=DNA
+```
+## split-gene2equal-info.c
+
+Splits an alignment file (.ali) into two files, each containing half of the informative positions, optionally considering gaps in the calculation.
+
+| Parameter | Description |
+|-----------|-------------|
+| `type` | protein or DNA (optional)|
+| `gap` | known or unknown (default=unknown) |
+| `ali` | name of file .ali (optional)  |
+
+### Usage
+```bash
+split-gene2equal-info gap=unknown
+```
+## root-max-div-taxon.c
+
+Detects and separates from an alignment file (.ali) two distinct groups of paralogous sequences by splitting a corresponding phylogenetic tree (.ali) into two subtrees that maximize taxonomic diversity.
+
+| Parameter | Description |
+|-----------|-------------|
+| `arb` | name of file .arb |
+| `ali` | name of file .ali |
+| `criterion0` | minimum number of species in clade 1, minimum number of species in clade 2, percent of internal branches longer than the one used to split the tree, minimum number of species shared by the two subtrees= (e.g. `criterion0=20,15,10,0`) |
+| `criterion1` | minimum number of species in clade 1, minimum number of species in clade 2, percent of internal branches longer than the one used to split the tree, minimum number of species shared by the two subtrees= (e.g. `criterion1=20,15,10,15`) |
+
+### Usage
+```bash
+root-max-div-taxon ali=file.ali arb=corresponding_tree.arb criterion0=20,15,10,0 criterion1=20,15,10,0
 ```
