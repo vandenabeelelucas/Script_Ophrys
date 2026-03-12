@@ -1,4 +1,4 @@
-## Phylotranscriptomics allows distinguishing major gene flow events from incomplete lineage sorting in rapidly diversifying mimetic orchids (genus Ophrys)
+# Phylotranscriptomics allows distinguishing major gene flow events from incomplete lineage sorting in rapidly diversifying mimetic orchids (genus Ophrys)
 Script from the paper "Phylotranscriptomics allows distinguishing major gene flow events from incomplete lineage sorting in rapidly diversifying mimetic orchids (genus Ophrys)"
 
 ## assembly_pipeline.sh
@@ -35,7 +35,7 @@ Assembly_pipeline.sh sample_R1.fastq.gz sample_R2.fastq.gz
 ## data_to_twisst.R
 Use genomic position and phylogenetic tree to generate the input files required to produce TWISST (https://github.com/simonhmartin/twisst) plots. Uses a modified version of plot_twisst.R called `plot_twisst_modify.R`.
 
-### Input
+### Parameters
 
 The script requires the following input files:
 
@@ -59,4 +59,24 @@ Rscript data_to_twisst.R \
   --prune_tree TRUE/FALSE \
   --chromo_size file.tsv \
   --alignment_size file.tsv
+```
+
+## select-aliMCL-taxonomy
+
+Filters sequence files based on number of species, number of paralogs per species, and number of clades present.
+
+### Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `-min_spec` | Minimum number of species |
+| `-min_clade` | Minimum number of clades (optional) |
+| `-max_para` | Maximum number of paralogs (optional) |
+| `-file_clade` | File containing the definition of clades (optional) |
+| `-file_needed_clade` | file containing the list of clades that must be present (optional) |
+| `-ali` | name of file .ali (optional) |
+
+### Usage
+```bash
+select-aliMCL-taxonomy min_spec=10 min_clade=5 file_clade=Example_file_clade.txt
 ```
